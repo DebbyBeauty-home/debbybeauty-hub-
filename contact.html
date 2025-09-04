@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Debby Beauty Lounge</title>
+  <link rel="stylesheet" href="contact.css"/>
+  
+</head>
+<body>
+  <header>
+    <h1 class="rotating">Contact Us</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Let's Talk!</h2>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/2348060593704" target="_blank">+2348060593704</a></p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/debbynails-lash" target="_blank">debbynails-lash</a></p>
+      <p><strong>TikTok:</strong> <a href="https://www.tiktok.com/@debbynails-lash" target="_blank">debbynailslash</a></p>
+      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/debbynails-lashbeautyhome" target="_blank">debbynails-lashbeautyhome</a></p>
+      <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@umehdeborah" target="_blank">umehdeborah</a></p>
+
+      <h3>Our Location</h3>
+      <p>NO1 Ibijoke Street, Kuduirat Abiola Way, Oregun</p>
+
+      <iframe 
+        src="https://www.google.com/maps?q=NO1+ibijoke+street+oregun+alausa+ikeja+lagos&output=embed"
+        width="100%" 
+        height="300" 
+        style="border:2px solid #ccc; border-radius:8px;" 
+        loading="lazy">
+      </iframe>
+    </section>
+
+    <!-- Book a Service -->
+    <section>
+      <h2>Book a Service</h2>
+      <form action="https://wa.me/2348060593704" method="get" target="_blank">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="service">Choose Service:</label>
+        <select id="service" name="service" required>
+          <option>Lashes</option>
+          <option>Nails</option>
+          <option>Pedicure & Manicure</option>
+          <option>Makeup</option>
+          <option>Tattoo</option>
+          <option>Teeth Brace</option>
+          <option>Brow-Shapping</option>
+          <option>Gele-styling</option>
+          <option>Home Service</option>
+          <option>Other</option>
+        </select>
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date">
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Book Now via WhatsApp</button>
+      </form>
+    </section>
+
+    <!-- Register for Training -->
+    <section>
+      <h2>Register for Training</h2>
+      <form action="https://wa.me/2348060593704" method="get" target="_blank">
+        <label for="trainee-name">Name:</label>
+        <input type="text" id="trainee-name" name="trainee-name" required>
+
+        <label for="interest">Training Interest:</label>
+        <input type="text" id="interest" name="interest" placeholder="e.g. Makeup, Lashes" required>
+
+        <label for="contact">Contact Info:</label>
+        <input type="tel" id="contact" name="contact" placeholder="+234..." required>
+
+        <button type="submit">Register via WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Debby Beauty Lounge</p>
+  </footer>
+</body>
+<script>
+  // Book a Service form
+  const bookForm = document.querySelector('section:nth-of-type(2) form');
+  bookForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // stop normal form submission
+
+    const name = document.getElementById('name').value;
+    const service = document.getElementById('service').value;
+    const date = document.getElementById('date').value;
+    const message = document.getElementById('message').value;
+
+    const text = `Hello! I want to book a service.\nName: ${name}\nService: ${service}\nDate: ${date}\nMessage: ${message}`;
+    const url = `https://wa.me/2348060593704?text=${encodeURIComponent(text)}`;
+
+    window.open(url, '_blank'); // open WhatsApp in new tab
+  });
+
+  // Register for Training form
+  const trainForm = document.querySelector('section:nth-of-type(3) form');
+  trainForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('trainee-name').value;
+    const interest = document.getElementById('interest').value;
+    const contact = document.getElementById('contact').value;
+
+    const text = `Hello! I want to register for training.\nName: ${name}\nInterest: ${interest}\nContact: ${contact}`;
+    const url = `https://wa.me/2348060593704?text=${encodeURIComponent(text)}`;
+
+    window.open(url, '_blank');
+  });
+</script>
+
+</html>
