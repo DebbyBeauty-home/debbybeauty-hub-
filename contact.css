@@ -1,0 +1,84 @@
+@import url('index.css');
+
+/* Map iframe styling */
+iframe {
+  margin-top: 15px;
+  border-radius: 8px;
+}
+
+/* Title animation */
+@keyframes Rotate {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(5deg) translateY(-10px);
+  }
+}
+
+header h1 {
+  animation: Rotate 20s infinite ease-in-out;
+}
+
+/* Navigation hover effect */
+nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: deeppink;
+  font-weight: bold;
+  border-radius: 0;
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  background-color: blue;
+  color: white;   /* changed to white so it is visible on blue */
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transform: scale(1.1);
+}
+
+/* Form styling */
+form {
+  margin: 20px 0;
+  padding: 15px;
+  background: blueviolet;
+  border: 1px solid #d63384;
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: green;
+  color: black;
+  padding: 10px 15px;
+  border: 1px solid whitesmoke;
+  border-radius: 59px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Rotating Title Animation */
+.rotating {
+  display: inline-block;
+  animation: spin 10s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
